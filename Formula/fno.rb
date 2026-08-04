@@ -34,11 +34,11 @@ class Fno < Formula
   # url a Linuxbrew user would hit a confusing `stable: url is missing` instead
   # of the clean `depends_on :macos` refusal below. arm64 overrides this url (and
   # adds its Sonoma floor) inside on_macos.
-  url "https://files.pythonhosted.org/packages/2b/c1/cbeb250db845ca349c0fe2d8e0d8940a9eddc4c15003836da129c6397e6f/fno-0.3.0-py3-none-macosx_10_12_x86_64.whl", using: :nounzip
+  url "https://files.pythonhosted.org/packages/75/51/7bb3eb8eb5098b9d468dfca6d74f3981c4312e1a99998c8235cea09ae1f4/fno-0.3.1-py3-none-macosx_10_12_x86_64.whl", using: :nounzip
   # Explicit version: Homebrew's filename version-detect picks "64" out of the
   # x86_64 default-url tag, not 0.2.1. Pin it so `brew info`/upgrade are correct.
-  version "0.3.0"
-  sha256 "30833007c6246cc7d9bc8cd84b2268b2bbbda3308efcf5ef45f651a41e584390"
+  version "0.3.1"
+  sha256 "0db1eadfcc825717bb73a8cfe186b4fd1c678133b5e3a23789001a5ea580965f"
   license "Apache-2.0"
 
   # Both macOS arches ship a wheel; the macOS floor is arch-conditional. The
@@ -61,8 +61,8 @@ class Fno < Formula
       # The arm64 wheel is tagged macosx_14_0, so it requires Sonoma; the x86_64
       # default targets macosx_10_12, so this floor is arm-only.
       depends_on macos: :sonoma
-      url "https://files.pythonhosted.org/packages/82/fa/12752937273942b17a472e3ebdc336cbb05675d5c33d883141f3555aad38/fno-0.3.0-py3-none-macosx_14_0_arm64.whl", using: :nounzip
-      sha256 "deb1cc7066f666608ad131bd59e9208f7c1fe235490fa931a8f464cc19b78c85"
+      url "https://files.pythonhosted.org/packages/c2/79/338d8cd270ef52e27306e092886d08ea03236f0612ebf59056c85407a3a6/fno-0.3.1-py3-none-macosx_14_0_arm64.whl", using: :nounzip
+      sha256 "d6d7c6e6809fd8f567fc0591fcc744965513af8500c506fca64f414546ce88b6"
     end
   end
 
