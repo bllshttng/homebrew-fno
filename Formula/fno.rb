@@ -42,8 +42,8 @@ class Fno < Formula
   license "Apache-2.0"
 
   # Both macOS arches ship a wheel; the macOS floor is arch-conditional. The
-  # arm64 wheel is tagged macosx_14_0, so its Sonoma floor is pinned on arm only
-  # (an arm64 Mac on macOS 11-13 would otherwise pass and then hit an ugly pip
+  # arm64 wheel is tagged macosx_15_0, so its Sequoia floor is pinned on arm only
+  # (an arm64 Mac on macOS 11-14 would otherwise pass and then hit an ugly pip
   # "incompatible wheel" error); the x86_64 default targets macosx_10_12, so
   # Intel needs no extra macOS gate beyond python@3.13's own. `depends_on :macos`
   # refuses Linuxbrew, and the top-level url above makes that refusal the error a
@@ -58,9 +58,9 @@ class Fno < Formula
   # arm64 overrides the top-level x86_64 default with its own wheel + floor.
   on_macos do
     on_arm do
-      # The arm64 wheel is tagged macosx_14_0, so it requires Sonoma; the x86_64
+      # The arm64 wheel is tagged macosx_15_0, so it requires Sequoia; the x86_64
       # default targets macosx_10_12, so this floor is arm-only.
-      depends_on macos: :sonoma
+      depends_on macos: :sequoia
       url "https://files.pythonhosted.org/packages/68/23/663b51ac565ab063c381c5fd5423fc1606703948deb87c3537d54a7543ec/fno-0.4.5-py3-none-macosx_15_0_arm64.whl", using: :nounzip
       sha256 "4d742e72f44b564ebd10b1622869b0b12d03c0f4f5f22d9179f69a2f0527dcbe"
     end
